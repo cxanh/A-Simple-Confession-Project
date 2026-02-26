@@ -17,6 +17,26 @@ if (username) {
 
 let clickCount = 0; // 记录点击 No 的次数
 
+// 预加载所有GIF资源
+const preloadImages = () => {
+  const images = [
+    "images/heart2_rmbg.gif",
+    "images/shocked2_rmbg.gif",
+    "images/think2_rmbg.gif",
+    "images/angry2_rmbg.gif",
+    "images/crying2_rmbg.gif",
+    "images/aready.gif"
+  ];
+  
+  images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+};
+
+// 页面加载完成后预加载图片
+window.addEventListener('load', preloadImages);
+
 // No 按钮的文字变化
 const noTexts = [
   "？你认真的吗…",
